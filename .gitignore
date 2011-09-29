@@ -1,0 +1,16 @@
+.project
+.buildpath
+.metadata
+nbproject
+*.tmp
+*.bak
+*.swp
+local.properties
+.classpath
+.settings/
+.loadpath
+packages/*
+.DS_Store
+
+Thumbs.db
+Desktop.ini

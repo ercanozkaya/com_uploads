@@ -1,9 +1,6 @@
-<?php
-
-echo KFactory::get('com://admin/files.controller.file')
+<?= KFactory::get('com://admin/files.controller.file')
 	->container('uploads-manage')
-	->display();
-?>
+	->display(); ?>
 
 <script>
 window.addEvent('domready', function() {

@@ -17,7 +17,7 @@ class ComUploadsControllerUpload extends ComDefaultControllerDefault
 	
 	protected function _actionAdd(KCommandContext $context)
 	{
-		$controller = KFactory::get('com://admin/files.controller.file', array('request' => array('container' => 'uploads-manage')));
+		$controller = $this->getService('com://admin/files.controller.file', array('request' => array('container' => 'uploads-manage')));
 		
 		try {
 			$data = $controller->add(array(
@@ -31,7 +31,9 @@ class ComUploadsControllerUpload extends ComDefaultControllerDefault
 			$context->setError($e);
 		}
 
-		$this->_redirect_message = sprintf('%s is successfully uploaded to %s', $data->name, $context->data->parent);
+		$folder = $data->parent ? $data->parent : 'the root folder';
+		
+		$this->_redirect_message = sprintf('%s is successfully uploaded to %s', $data->name, $folder);
 		
 		return $data;
 	}	

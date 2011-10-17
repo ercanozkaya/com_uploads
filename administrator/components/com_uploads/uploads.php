@@ -1,3 +1,3 @@
 <?php
 
-echo KFactory::get('com://admin/uploads.dispatcher')->dispatch();
+echo KService::get('com://admin/uploads.dispatcher')->dispatch();
